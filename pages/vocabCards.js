@@ -18,8 +18,10 @@ const showVocabCards = (array) => {
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title" id="cardTitle">${card.title}</h5>
-        <p class="card-text" id="cardDef">${card.defintion}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title" id="cardLanguage">${card.language}</h5>
+        <p class="card-text" id="cardDef">${card.definition}</p>
+        <button class="btn btn-primary" >Edit</button>
+        <button class="btn btn-danger" >delete</button>
       </div>
     </div>`;
   });
