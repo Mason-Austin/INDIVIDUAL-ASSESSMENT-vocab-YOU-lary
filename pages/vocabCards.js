@@ -9,7 +9,7 @@ const emptyVocabCards = () => {
 const showVocabCards = (array) => {
   clearDom();
 
-  const filterString = '<button type="button" class="btn btn-primary">Primary</button>';
+  const filterString = '<button type="button" class="btn btn-primary">HTML</button> <button type="button" class="btn btn-primary">CSS</button> <button type="button" class="btn btn-primary">JavaScript</button> <button type="button" class="btn btn-primary">Python</button>';
   renderToDom('#filterBtns', filterString);
 
   let domString = '';
