@@ -1,4 +1,5 @@
-import { deleteVocabCard, getVocabCards } from '../api/vocabData';
+import { deleteVocabCard, getSingleVocabCard, getVocabCards } from '../api/vocabData';
+import addCardForm from '../components/form/addCardForm';
 import { showVocabCards } from '../pages/vocabCards';
 
 const domEvents = (user) => {
@@ -9,6 +10,11 @@ const domEvents = (user) => {
       deleteVocabCard(firebaseKey).then(() => {
         getVocabCards(user.uid).then(showVocabCards);
       });
+    }
+    if (e.target.id.includes('edit-card')) {
+      const [, firebaseKey] = (e.target.id.split('--'));
+
+      getSingleVocabCard(firebaseKey).then((cardObj) => addCardForm(cardObj));
     }
   });
 };
