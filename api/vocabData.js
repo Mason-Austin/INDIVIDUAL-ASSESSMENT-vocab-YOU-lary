@@ -68,6 +68,21 @@ const getSingleVocabCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const filterVocabCards = (uid, tech) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}vocab.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const filtered = Object.values(data).filter((item) => item.language === tech);
+      resolve(filtered);
+    })
+    .catch(reject);
+});
+
 export {
-  getVocabCards, createVocabCard, updateVocabCard, deleteVocabCard, getSingleVocabCard
+  getVocabCards, createVocabCard, updateVocabCard, deleteVocabCard, getSingleVocabCard, filterVocabCards
 };
