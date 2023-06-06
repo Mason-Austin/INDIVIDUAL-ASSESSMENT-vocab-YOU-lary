@@ -10,8 +10,8 @@ const addCardForm = (obj = {}) => {
       <input value="${obj.title || ''}" required type="text" class="form-control" id="cardTitle" placeholder="Title">
     </div>
     <div class="mb-3">
-      <label for="cardDescription" class="form-label">Description</label>
-      <textarea required class="form-control" id="cardDescription" placeholder="Description" rows="3"></textarea>
+      <label for="cardDefinition" class="form-label">Definition</label>
+      <textarea required class="form-control" id="cardDefinition" placeholder="Definition" rows="3"></textarea>
     </div>
     <select required id="language" class="form-select" aria-label="Default select example">
       <option selected disabled hidden>Select a Language/Tech</option>
@@ -20,11 +20,11 @@ const addCardForm = (obj = {}) => {
       <option value="JavaScript">JavaScript</option>
       <option value="Python">Python</option>
     </select>
-    <button type="submit" class="btn btn-success">Create</button>
+    <button type="submit" class="btn btn-success">Submit</button>
     </form>`;
   renderToDom('#form-container', domString);
   if (obj.definition) {
-    document.querySelector('#cardDescription').value = obj.definition;
+    document.querySelector('#cardDefinition').value = obj.definition;
     document.querySelector('#language').value = obj.language;
   }
 };
