@@ -4,11 +4,10 @@ import { showVocabCards } from '../pages/vocabCards';
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
-    console.warn(e.target);
     if (e.target.id.includes('submit-card')) {
       const payload = {
         title: document.querySelector('#cardTitle').value,
-        definition: document.querySelector('#cardDescription').value,
+        definition: document.querySelector('#cardDefinition').value,
         language: document.querySelector('#language').value,
         uid: user.uid
       };
@@ -20,6 +19,19 @@ const formEvents = (user) => {
         updateVocabCard(patchPayLoad).then(() => {
           getVocabCards(user.uid).then(showVocabCards);
         });
+      });
+    }
+    if (e.target.id.includes('edit-card')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        title: document.querySelector('#cardTitle').value,
+        definition: document.querySelector('#cardDefinition').value,
+        language: document.querySelector('#language').value,
+        uid: user.uid,
+        firebaseKey
+      };
+      updateVocabCard(payload).then(() => {
+        getVocabCards(user.uid).then(showVocabCards);
       });
     }
   });
