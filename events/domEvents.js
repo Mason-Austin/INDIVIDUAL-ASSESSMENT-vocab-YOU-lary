@@ -6,6 +6,7 @@ import { showVocabCards } from '../pages/vocabCards';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
+    console.warn(e.target.id);
     if (e.target.id.includes('delete-card')) {
       const [, firebaseKey] = (e.target.id.split('--'));
 
@@ -37,6 +38,9 @@ const domEvents = (user) => {
     if (e.target.id === ('clearBtn')) {
       getVocabCards(user.uid).then(showVocabCards);
     }
+  });
+  document.querySelector('#filterBy').addEventListener('change', () => {
+    console.warn('wow');
   });
 };
 
