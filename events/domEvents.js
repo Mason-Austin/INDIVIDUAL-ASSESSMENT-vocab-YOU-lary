@@ -40,7 +40,7 @@ const domEvents = (user) => {
     }
   });
   setTimeout(() => {
-    document.querySelector('#filterBy').addEventListener('select', () => {
+    document.querySelector('#filterBy').addEventListener('change', () => {
       console.warn('wow');
       switch (document.querySelector('#filterBy').value) {
         case '1':
