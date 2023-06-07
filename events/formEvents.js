@@ -28,6 +28,7 @@ const formEvents = (user) => {
         definition: document.querySelector('#cardDefinition').value,
         language: document.querySelector('#language').value,
         uid: user.uid,
+        timeSubmit: Date.now(),
         firebaseKey
       };
       updateVocabCard(payload).then(() => {

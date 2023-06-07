@@ -3,10 +3,10 @@ import {
 } from '../api/vocabData';
 import addCardForm from '../components/form/addCardForm';
 import { showVocabCards } from '../pages/vocabCards';
+import { filterOld, filterNew, filterAlph } from '../utils/filter';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
-    console.warn(e.target.id);
     if (e.target.id.includes('delete-card')) {
       const [, firebaseKey] = (e.target.id.split('--'));
 
@@ -39,9 +39,28 @@ const domEvents = (user) => {
       getVocabCards(user.uid).then(showVocabCards);
     }
   });
-  document.querySelector('#filterBy').addEventListener('change', () => {
-    console.warn('wow');
-  });
+  setTimeout(() => {
+    document.querySelector('#filterBy').addEventListener('select', () => {
+      console.warn('wow');
+      switch (document.querySelector('#filterBy').value) {
+        case '1':
+          console.warn('1');
+          filterAlph(user);
+          break;
+        case '2':
+          console.warn('2');
+          filterOld(user);
+          break;
+        case '3':
+          console.warn('3');
+          filterNew(user);
+          break;
+        default:
+          break;
+      }
+      console.warn('jam');
+    });
+  }, 500);
 };
 
 export default domEvents;
