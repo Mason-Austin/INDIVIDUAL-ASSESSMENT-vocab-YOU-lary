@@ -37,12 +37,13 @@ body{
   background-color: rgba($color: #000000, $alpha: .5);
   width: 22%;
   margin: 1% 1%;
-  padding: 1.25% 1%;
+  padding: .5% .75%;
 }
 
 .card-body{
   background-color: rgb(255, 255, 255);
   border: 1px solid gray;
+  position: relative;
 }
 .hvr-float{
   transition: transform .3s ease-out;
@@ -81,6 +82,7 @@ form{
   animation: border 8s linear infinite forwards;
 }
 
+
 @keyframes border {
   0%, 100%{
     background-position: 0 0;
@@ -88,4 +90,11 @@ form{
   50%{
     background-position: 300%;
   }
+}
+.card-btns{
+  position: absolute;
+  bottom: 0;
+}
+.card-info{
+  margin-bottom: 10%;
 }
