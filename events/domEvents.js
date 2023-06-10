@@ -38,11 +38,16 @@ const domEvents = (user) => {
     if (e.target.id === ('clearBtn')) {
       getVocabCards(user.uid).then(showVocabCards);
     }
+    if (e.target.id === ('cancelCard')) {
+      console.warn('wow');
+      getVocabCards(user.uid).then(showVocabCards);
+    }
   });
   setTimeout(() => {
-    document.querySelector('#filterBy').addEventListener('change', () => {
+    document.querySelector('#filterBtns').addEventListener('change', (e) => {
       console.warn('wow');
-      switch (document.querySelector('#filterBy').value) {
+      console.warn(e.target.value);
+      switch (e.target.value) {
         case '1':
           console.warn('1');
           filterAlph(user);
