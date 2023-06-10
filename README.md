@@ -6,9 +6,6 @@ This website was made to allow you to make vocabulary codes over different tech 
 
 [View App](https://masons-vocab-you-lary.netlify.app/)
 
-## Get Started <!-- OPTIONAL, but doesn't hurt -->
-PLACE CODE SNIPPET HERE
-
 ## About the User <!-- This is a scaled down user persona -->
 - The ideal user for this application is any that wants to make vocabulary cards about tech stacks.
 
