@@ -1,4 +1,5 @@
-# Vocab-YOU-lary  [![Netlify Status][(https://api.netlify.com/api/v1/badges/4ab7e730-7ed3-4cfd-a988-66195e79a991/deploy-status)]([https://app.netlify.com/sites/drt-sortinghat/deploys](https://masons-vocab-you-lary.netlify.app/))
+# Vocab-YOU-lary [![Netlify Status](https://api.netlify.com/api/v1/badges/d1c245f4-c846-4ab8-bda4-639c62f4b2d2/deploy-status)](https://masons-vocab-you-lary.netlify.app/)
+
 <!-- update the netlify badge above with your own badge that you can find at n](https://masons-vocab-you-lary.netlify.app/)etlify under settings/general#status-badges -->
 
 This website was made to allow you to make vocabulary codes over different tech stacks which will be stored on a sever that only the user can interacte with.
@@ -12,12 +13,13 @@ PLACE CODE SNIPPET HERE
 - The ideal user for this application is any that wants to make vocabulary cards about tech stacks.
 
 ## Features <!-- List your app features using bullets! Do NOT use a paragraph. No one will read that! -->
--Users can create new vocabulary cards
--Users can filter by tech
--Users can filter by oldest-newest, newest-oldest, alphabetically
--Users can sign in with google auth
+- Users can create new vocabulary cards
+- Users can filter by tech
+- Users can filter by oldest-newest, newest-oldest, alphabetically
+- Users can sign in with google auth
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
+***
 - [Check out the deployed site](https://masons-vocab-you-lary.netlify.app/)
 - [Wireframes](https://www.figma.com/file/1asf9N3jcZdRVy2HKpi8sv/Untitled?type=design&t=Qo5F0H385cTeFfgo-0)
 
