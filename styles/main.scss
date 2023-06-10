@@ -71,3 +71,21 @@ form{
 #formBtns{
   margin-top: 2%;
 }
+
+.card::before,
+.card:hover{
+  background: linear-gradient(45deg,
+  #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000,
+  #ff0055, #ff0000, #ffff00, #00ff00, #0099ff, #001aff, #a200ff );
+  background-size: 300%;
+  animation: border 8s linear infinite forwards;
+}
+
+@keyframes border {
+  0%, 100%{
+    background-position: 0 0;
+  }
+  50%{
+    background-position: 300%;
+  }
+}
