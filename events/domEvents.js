@@ -24,29 +24,27 @@ const domEvents = (user) => {
       getVocabCards(user.uid).then(showVocabCards);
     }
   });
-  setTimeout(() => {
-    document.querySelector('#filterBtns').addEventListener('change', (e) => {
-      console.warn('wow');
-      console.warn(e.target.value);
-      switch (e.target.value) {
-        case '1':
-          console.warn('1');
-          filterAlph(user);
-          break;
-        case '2':
-          console.warn('2');
-          filterOld(user);
-          break;
-        case '3':
-          console.warn('3');
-          filterNew(user);
-          break;
-        default:
-          break;
-      }
-      console.warn('jam');
-    });
-  }, 500);
+  document.querySelector('#filterBtns').addEventListener('change', (e) => {
+    console.warn('wow');
+    console.warn(e.target.value);
+    switch (e.target.value) {
+      case '1':
+        console.warn('1');
+        filterAlph(user);
+        break;
+      case '2':
+        console.warn('2');
+        filterOld(user);
+        break;
+      case '3':
+        console.warn('3');
+        filterNew(user);
+        break;
+      default:
+        break;
+    }
+    console.warn('jam');
+  });
 };
 
 export default domEvents;
