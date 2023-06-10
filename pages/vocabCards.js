@@ -15,17 +15,19 @@ const showVocabCards = (array) => {
   let domString = '';
   array.forEach((card) => {
     domString += `
-    <div class="card rainbow">
-      <div class="card-body hvr-float">
-        <h5 class="card-title" id="cardTitle">${card.title}</h5>
-        <h5 class="card-title" id="cardLanguage">${card.language}</h5>
-        <p class="card-text" id="cardDef">${card.definition}</p>
-        <div class="card-btns">
-        <button id="edit-card--${card.firebaseKey}" class="btn btn-outline-dark" >Edit</button>
-        <button id="delete-card--${card.firebaseKey}" class="btn btn-outline-dark" >delete</button>
+      <div class="card rainbow hvr-float">
+        <div class="card-body">
+          <div class="card-info">
+          <h5 class="card-title" id="cardTitle">${card.title}</h5>
+          <h5 class="card-title" id="cardLanguage">${card.language}</h5>
+          <p class="card-text" id="cardDef">${card.definition}</p>
+          </div>
+          <div class="card-btns">
+          <button id="edit-card--${card.firebaseKey}" class="btn btn-outline-dark" >Edit</button>
+          <button id="delete-card--${card.firebaseKey}" class="btn btn-outline-dark" >delete</button>
+          </div>
         </div>
-      </div>
-    </div>`;
+      </div>`;
   });
   renderToDom('#view', domString);
 };
