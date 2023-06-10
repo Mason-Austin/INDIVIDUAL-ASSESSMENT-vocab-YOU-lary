@@ -21,6 +21,7 @@ const addCardForm = (obj = {}) => {
       <option value="Python">Python</option>
     </select>
     <button type="submit" class="btn btn-success">Submit</button>
+    <button id="cancelCard" class="btn btn-danger">Cancel</button>
     </form>`;
   renderToDom('#form-container', domString);
   if (obj.definition) {
