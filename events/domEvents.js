@@ -1,5 +1,5 @@
 import {
-  deleteVocabCard, filterVocabCards, getSingleVocabCard, getVocabCards
+  deleteVocabCard, getSingleVocabCard, getVocabCards
 } from '../api/vocabData';
 import addCardForm from '../components/form/addCardForm';
 import { showVocabCards } from '../pages/vocabCards';
@@ -19,53 +19,32 @@ const domEvents = (user) => {
 
       getSingleVocabCard(firebaseKey).then((cardObj) => addCardForm(cardObj));
     }
-    if (e.target.id === ('htmlBtn')) {
-      // eslint-disable-next-line quotes
-      filterVocabCards(user.uid, "HTML").then(showVocabCards);
-    }
-    if (e.target.id.includes('cssBtn')) {
-      // eslint-disable-next-line quotes
-      filterVocabCards(user.uid, "CSS").then(showVocabCards);
-    }
-    if (e.target.id === ('javaBtn')) {
-      // eslint-disable-next-line quotes
-      filterVocabCards(user.uid, "JavaScript").then(showVocabCards);
-    }
-    if (e.target.id === ('pythonBtn')) {
-      // eslint-disable-next-line quotes
-      filterVocabCards(user.uid, "Python").then(showVocabCards);
-    }
-    if (e.target.id === ('clearBtn')) {
-      getVocabCards(user.uid).then(showVocabCards);
-    }
     if (e.target.id === ('cancelCard')) {
       console.warn('wow');
       getVocabCards(user.uid).then(showVocabCards);
     }
   });
-  setTimeout(() => {
-    document.querySelector('#filterBtns').addEventListener('change', (e) => {
-      console.warn('wow');
-      console.warn(e.target.value);
-      switch (e.target.value) {
-        case '1':
-          console.warn('1');
-          filterAlph(user);
-          break;
-        case '2':
-          console.warn('2');
-          filterOld(user);
-          break;
-        case '3':
-          console.warn('3');
-          filterNew(user);
-          break;
-        default:
-          break;
-      }
-      console.warn('jam');
-    });
-  }, 500);
+  document.querySelector('#filterBtns').addEventListener('change', (e) => {
+    console.warn('wow');
+    console.warn(e.target.value);
+    switch (e.target.value) {
+      case '1':
+        console.warn('1');
+        filterAlph(user);
+        break;
+      case '2':
+        console.warn('2');
+        filterOld(user);
+        break;
+      case '3':
+        console.warn('3');
+        filterNew(user);
+        break;
+      default:
+        break;
+    }
+    console.warn('jam');
+  });
 };
 
 export default domEvents;

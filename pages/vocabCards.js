@@ -9,20 +9,21 @@ const emptyVocabCards = () => {
 const showVocabCards = (array) => {
   clearDom();
 
-  let filterString = '<button id="htmlBtn" type="button" class="btn btn-primary">HTML</button> <button id="cssBtn" type="button" class="btn btn-primary">CSS</button> <button id="javaBtn" type="button" class="btn btn-primary">JavaScript</button> <button id="pythonBtn" type="button" class="btn btn-primary">Python</button> <button id="clearBtn" type="button" class="btn btn-primary">Clear filter</button>';
-  filterString += '<select id="filterBy" class="form-select" aria-label="Default select example"><option selected disabled hidden>Filter by</option><option id="test1" value="1">Alphabetically</option><option value="2">Oldest-Newest</option><option value="3">Newest-Oldest</option></select>';
+  const filterString = '<select id="filterBy" class="form-select" aria-label="Default select example"><option selected disabled hidden>Filter by</option><option id="test1" value="1">Alphabetically</option><option value="2">Oldest-Newest</option><option value="3">Newest-Oldest</option></select>';
   renderToDom('#filterBtns', filterString);
 
   let domString = '';
   array.forEach((card) => {
     domString += `
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
+    <div class="card rainbow">
+      <div class="card-body hvr-float">
         <h5 class="card-title" id="cardTitle">${card.title}</h5>
         <h5 class="card-title" id="cardLanguage">${card.language}</h5>
         <p class="card-text" id="cardDef">${card.definition}</p>
-        <button id="edit-card--${card.firebaseKey}" class="btn btn-warning" >Edit</button>
-        <button id="delete-card--${card.firebaseKey}" class="btn btn-danger" >delete</button>
+        <div class="card-btns">
+        <button id="edit-card--${card.firebaseKey}" class="btn btn-outline-dark" >Edit</button>
+        <button id="delete-card--${card.firebaseKey}" class="btn btn-outline-dark" >delete</button>
+        </div>
       </div>
     </div>`;
   });
